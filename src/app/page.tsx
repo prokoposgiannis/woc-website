@@ -3,39 +3,40 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { SingleLevelDropdownMenu } from "./components/header/languageDropDownMenu";
 
 type TranslationKeys = "beAnAgent" | "findAgents" | "about" | "contact";
-type Languages = "en" | "el";
+type Languages = "en" | "el" | "de";
+
+const translation: Record<Languages, Record<TranslationKeys, string>> = {
+  en: {
+    beAnAgent: "Be an Agent",
+    findAgents: "Find Agents",
+    about: "About us",
+    contact: "Contact us!",
+  },
+  el: {
+    beAnAgent: "Γίνε Agent",
+    findAgents: "Βρες Agents",
+    about: "Πληροφορίες για εμάς",
+    contact: "Στείλε μας!",
+  },
+  de: {
+    beAnAgent: "Werde ein Agent",
+    findAgents: "Finde Agenten",
+    about: "Über uns",
+    contact: "Kontaktiere uns!",
+  },
+};
 
 export default function Home() {
-  const [lang, setLang] = useState("de");
-
-  const translation = {
-    en: {
-      beAnAgent: "Be an Agent",
-      findAgents: "Find Agents",
-      about: "About us",
-      contact: "Contact us!",
-    },
-    el: {
-      beAnAgent: "Γίνε Agent",
-      findAgents: "Βρες Agents",
-      about: "Πληροφορίες για εμάς",
-      contact: "Στείλε μας!",
-    },
-    de: {
-      beAnAgent: "Werde ein Agent",
-      findAgents: "Finde Agenten",
-      about: "Über uns",
-      contact: "Kontaktiere uns!",
-    },
-  };
+  const [lang, setLang] = useState<Languages>("de");
 
   return (
     <div className="flex min-h-screen overscroll-none cursor-default">
       <div className="flex flex-row items-center h-32 w-full text-lg font-bold text-white text-nowrap">
         <div className="w-56">
-          <text className="p-6">woc</text>
+          <p className="text-2xl px-6">woc</p>
         </div>
         <div className="flex flex-row w-full pl-28">
           <ul className="flex flex-row space-x-10 ">
@@ -70,6 +71,7 @@ export default function Home() {
           <div className="p-6" onClick={() => setLang("en")}>
             <FontAwesomeIcon icon={faGlobe} className="pr-3" />
             {lang.toUpperCase()}
+            {/* <SingleLevelDropdownMenu /> */}
           </div>
         </div>
       </div>
