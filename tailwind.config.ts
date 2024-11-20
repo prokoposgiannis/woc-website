@@ -12,6 +12,18 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        underline: {
+          "0%": {width: '0%'},
+          "100%": {width: '100%'}
+        }
+      },
+      animation: {
+        underline: 'underline 0.3s ease-in-out'
+      },
+      textShadow: {
+        glow: "0 0 8px rgba(255, 255, 255, 0.8)", // Glow effect
+      },
     },
   },
   plugins: [],
