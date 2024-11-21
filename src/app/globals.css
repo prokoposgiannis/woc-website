@@ -7,6 +7,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primaryColor: #124e66;
+  --secondaryColor: #748d92;
+  --secondaryColorLight: #90a7b1;
+  --white: #fdfdfd;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,11 +23,7 @@
 body {
   color: var(--foreground);
   /* background: var(--background); */
-  background: linear-gradient(
-    to bottom,
-    #124e66 10%,
-    #212a31 15% 100%
-  ); /* Από μπλε σε πράσινο και μωβ */
+  background: linear-gradient(to bottom, #124e66 10%, #212a31 15% 100%);
   font-family: Arial, Helvetica, sans-serif;
 }
 
