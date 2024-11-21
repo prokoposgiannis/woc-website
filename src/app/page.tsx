@@ -34,7 +34,7 @@ const translation: Record<Languages, Record<TranslationKeys, string>> = {
 
 export default function Home() {
   const [lang, setLang] = useState<Languages>("en");
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
 
   const toggleDropDown = () => {
     setIsOpen(!isOpen);
@@ -42,8 +42,11 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen overscroll-none cursor-default">
+      <div className="absolute top-36 right-[-170px]">
+        <img src="/globe.svg" alt="woc globe image" width={700} height={700} />
+      </div>
       <div className="flex flex-row items-center h-32 w-full text-lg font-bold text-white text-nowrap px-24">
-        <div className="w-56 pb-2 px-6">
+        <div className="min-w-32 pb-2 px-6">
           <img src="/logo.svg" alt="woc Logo" width={100} height={100} />
         </div>
         <div className="flex flex-row w-full pl-28">
@@ -74,7 +77,7 @@ export default function Home() {
         </div>
         <div className="flex justify-end items-center space-x-12 w-full mr-10">
           <Link href="/about">
-            <div className="mx-6 px-6 py-2 bg-secondaryColor text-center rounded-xl hover:bg-secondaryColorLight transition duration-300">
+            <div className="mx-6 px-6 py-2 bg-secondaryColor text-center shadow-md rounded-xl hover:bg-secondaryColorLight transition duration-300">
               {translation[lang].contact}
             </div>
           </Link>
@@ -84,7 +87,7 @@ export default function Home() {
               {lang.toUpperCase()}
               {isOpen && (
                 <div
-                  className="absolute right-6 mt-2 w-fit origin-top-right bg-white border border-gray-200 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  className="absolute mt-2 w-fit origin-top-right bg-white border border-gray-200 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                   role="menu"
                 >
                   <div className="py-1">
@@ -119,22 +122,44 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col h-fit text-white text-2xl ml-36 mt-20">
-        <p className="font-semibold">Why choose woc?</p>
-        <p className="">It's simple</p>
+      <div className="flex flex-col h-fit text-white ml-36 mt-64 mb-44">
+        <p className="font-semibold w-fit text-3xl">Why choose woc?</p>
+        <div className="flex w-72 justify-end text-2xl ">
+          <p>It's simple</p>
+        </div>
       </div>
       <div className="relative h-96 w-full text-primaryColor">
+        <div className="absolute w-full z-10">
+          <div className="flex justify-between px-32">
+            <div className="flex flex-col">
+              <div className="rounded-lg z-10 bg-gradient-to-b from-secondaryColor to-foreground w-96 h-96"></div>
+              <p className="text-white w-96 text-center">
+                Woc prioritizes agents' happiness with fair pay and a supportive
+                work environment for delivering top-quality service
+              </p>
+            </div>
+            <div className="rounded-lg z-10 bg-gradient-to-b from-secondaryColor to-foreground w-96 h-96"></div>
+            <div className="rounded-lg z-10 bg-gradient-to-b from-secondaryColor to-foreground w-96 h-96"></div>
+          </div>
+        </div>
         <svg
-          className="absolute top-0 left-0 w-full h-full fill-current"
+          className="absolute top-0 left-0 w-full z-0 h-full fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
         >
-          <polygon points="0,20 100,0 100,100 0,100" />
+          <polygon points="0,45 100,10 100,100 0,100" />
         </svg>
       </div>
       <div className="flex h-96 bg-primaryColor flex-col">
-        <div className="flex">
+        <div className="flex text-white p-24">
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+        </div>
+      </div>
+      <div className="flex h-96  flex-col">
+        <div className="flex text-white p-24">
           <p>1</p>
           <p>2</p>
           <p>3</p>
