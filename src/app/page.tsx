@@ -8,7 +8,19 @@ import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
 config.autoAddCss = false; // Prevent FontAwesome from adding its own CSS
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
-type TranslationKeys = "beAnAgent" | "findAgents" | "about" | "contact";
+import FirstBlock from "@/app/components/body/FirstBlock";
+import SecondBlock from "@/app/components/body/SecondBlock";
+
+type TranslationKeys =
+  | "beAnAgent"
+  | "findAgents"
+  | "about"
+  | "contact"
+  | "title"
+  | "subtitle"
+  | "image1"
+  | "image2"
+  | "image3";
 type Languages = "en" | "el" | "de";
 
 const translation: Record<Languages, Record<TranslationKeys, string>> = {
@@ -17,24 +29,48 @@ const translation: Record<Languages, Record<TranslationKeys, string>> = {
     findAgents: "Find Agents",
     about: "About us",
     contact: "Contact us!",
+    title: "Why choose woc?",
+    subtitle: "It's simple",
+    image1:
+      "Woc prioritizes agents' happiness with fair pay and a supportive work environment for delivering top-quality service",
+    image2:
+      "Happy agents lead to satisfied customers, creating lasting loyalty",
+    image3:
+      "Exceptional support elevates your brand and keeps customers coming back",
   },
   el: {
     beAnAgent: "Γίνε Agent",
     findAgents: "Βρες Agents",
     about: "Πληροφορίες για εμάς",
     contact: "Στείλε μας!",
+    title: "Γιατί να επιλέξεις woc;",
+    subtitle: "Είναι απλό",
+    image1:
+      "Η woc δίνει προτεραιότητα στην ευτυχία των συνεργατών, προσφέροντας δίκαιες αμοιβές και ένα υποστηρικτικό εργασιακό περιβάλλον για την παροχή υπηρεσιών υψηλής ποιότητας.",
+    image2:
+      "Ευτυχισμένοι συνεργάτες οδηγούν σε ικανοποιημένους πελάτες, δημιουργώντας μακροχρόνια αφοσίωση.",
+    image3:
+      "Η εξαιρετική υποστήριξη αναβαθμίζει το brand σας και κρατά τους πελάτες να επιστρέφουν.",
   },
   de: {
     beAnAgent: "Werde ein Agent",
     findAgents: "Finde Agenten",
     about: "Über uns",
     contact: "Kontaktiere uns!",
+    title: "Warum woc wählen?",
+    subtitle: "Es ist einfach",
+    image1:
+      "Woc priorisiert das Wohlbefinden der Mitarbeiter durch faire Bezahlung und ein unterstützendes Arbeitsumfeld, um erstklassigen Service zu gewährleisten.",
+    image2:
+      "Glückliche Mitarbeiter führen zu zufriedenen Kunden und schaffen dauerhafte Loyalität.",
+    image3:
+      "Hervorragender Support hebt Ihre Marke hervor und sorgt dafür, dass Kunden immer wieder zurückkehren.",
   },
 };
 
 export default function Home() {
   const [lang, setLang] = useState<Languages>("en");
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleDropDown = () => {
     setIsOpen(!isOpen);
@@ -122,48 +158,31 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col h-fit text-white ml-36 mt-64 mb-44">
-        <p className="font-semibold w-fit text-3xl">Why choose woc?</p>
-        <div className="flex w-72 justify-end text-2xl ">
-          <p>It's simple</p>
-        </div>
-      </div>
-      <div className="relative h-96 w-full text-primaryColor">
-        <div className="absolute w-full z-10">
-          <div className="flex justify-between px-32">
-            <div className="flex flex-col">
-              <div className="rounded-lg z-10 bg-gradient-to-b from-secondaryColor to-foreground w-96 h-96"></div>
-              <p className="text-white w-96 text-center">
-                Woc prioritizes agents' happiness with fair pay and a supportive
-                work environment for delivering top-quality service
-              </p>
-            </div>
-            <div className="rounded-lg z-10 bg-gradient-to-b from-secondaryColor to-foreground w-96 h-96"></div>
-            <div className="rounded-lg z-10 bg-gradient-to-b from-secondaryColor to-foreground w-96 h-96"></div>
+      <div className="flex flex-col h-fit text-white ml-36 mt-64 mb-44 relative">
+        <p className="font-semibold w-fit text-3xl">
+          {translation[lang].title}
+        </p>
+        <div className="flex w-72 justify-end text-2xl relative">
+          <p className="relative z-10">{translation[lang].subtitle}</p>
+          <div className="absolute top-[-8px] right-[-50px] z-0">
+            <img
+              src="/stroke.svg"
+              alt="woc stroke image"
+              width={170}
+              height={170}
+            />
           </div>
         </div>
-        <svg
-          className="absolute top-0 left-0 w-full z-0 h-full fill-current"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <polygon points="0,45 100,10 100,100 0,100" />
-        </svg>
       </div>
-      <div className="flex h-96 bg-primaryColor flex-col">
-        <div className="flex text-white p-24">
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
+      <div className="flex flex-col">
+        <div className="relative w-full h-96 text-primaryColor flex justify-center">
+          <FirstBlock translation={translation} lang={lang} />
         </div>
-      </div>
-      <div className="flex h-96  flex-col">
-        <div className="flex text-white p-24">
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
+        <div className="flex h-52 bg-primaryColor flex-col"></div>
+        <div className="h-full bg-primaryColor">
+          <SecondBlock translation={translation} lang={lang} />
         </div>
+        <div className="flex h-96 flex-col"></div>
       </div>
     </div>
   );
