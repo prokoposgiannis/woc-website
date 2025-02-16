@@ -1,6 +1,8 @@
 "use strict";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Header() {
+export default function Header({ translation, lang }) {
   return (
     <>
       <div className="absolute top-36 right-[-170px]">

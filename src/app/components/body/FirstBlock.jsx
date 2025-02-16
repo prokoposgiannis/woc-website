@@ -1,5 +1,5 @@
 "use strict";
-import SquareBlock from "@/app/components/body/squareBlock";
+import SquareBlock from "@/app/components/body/SquareBlock";
 
 export default function FirstBlock({ translation, lang }) {
   return (

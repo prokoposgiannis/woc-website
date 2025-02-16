@@ -21,12 +21,21 @@ const config: Config = {
           "0%": { width: "0%" },
           "100%": { width: "100%" },
         },
+        shine: {
+          "0%, 100%": { opacity: "0.3", fill: "#ffffff" },
+          "50%": { opacity: "1", fill: "#ffffff" },
+        },
       },
       animation: {
         underline: "underline 0.3s ease-in-out",
+        shine0: "shine 3s ease-in-out infinite",
+        shine1: "shine 4s ease-in-out infinite",
+        shine2: "shine 4s ease-in-out infinite",
+        shine3: "shine 6s ease-in-out infinite",
+        shine4: "shine 5s ease-in-out infinite",
       },
-      textShadow: {
-        glow: "0 0 8px rgba(255, 255, 255, 0.8)", // Glow effect
+      boxShadow: {
+        "custom-shadow": "-4px 6px 15px rgba(0, 0, 0, 0.5)", // Example shadow
       },
     },
   },
