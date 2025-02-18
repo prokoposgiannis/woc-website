@@ -28,7 +28,19 @@
     ".next/types/**/*.ts",
     "src/app/firebase/config.js",
     "src/app/components/body/ContactBlock.jsx",
-    "src/app/components/body/FirstBlock.jsx"
+    "src/app/components/body/FirstBlock.jsx",
+    "src/app/page.tsx",
+    "src/app/components/body/ForthBlock.jsx",
+    "src/app/components/body/RectangleBlock.jsx",
+    "src/app/components/body/SwiperComponent.jsx",
+    "src/app/components/body/ThirdBlock copy.jsx",
+    "src/app/components/body/ThirdBlock.jsx",
+    "src/app/components/Footer.jsx",
+    "src/app/components/AnimatedGlobe.jsx",
+    "src/app/components/header/Header.jsx",
+    "src/app/components/ContactForm.jsx",
+    "src/app/components/body/SquareBlock.jsx",
+    "src/app/components/body/SecondBlock.jsx"
   ],
   "exclude": ["node_modules"]
 }

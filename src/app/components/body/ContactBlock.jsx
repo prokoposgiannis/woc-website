@@ -1,19 +1,24 @@
-"use strict";
+"use client";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import ContactForm from "@/app/components/ContactForm";
 import Link from "next/link";
 
-export default function ContactBlock({ translation, lang }) {
+export default function ContactBlock() {
+  const { t } = useTranslation();
+  const lang = useSelector((state) => state.language.lang); // Get language from Redux
+
   return (
     <div className="relative flex flex-col h-full px-3 w-full bg-primaryColor justify-center items-center">
       <div className="flex w-full text-white font-semibold justify-center">
         <Link href="/about">
           <div className="absolute top-[-20px] right-1/2 mx-6 px-6 py-2 bg-secondaryColor text-center shadow-custom-shadow rounded-lg hover:bg-secondaryColorLight transition duration-300">
-            {translation[lang].beAnAgent}
+            {t("beAnAgent")}
           </div>
         </Link>
         <Link href="/about">
           <div className="absolute top-[-20px] left-1/2 mx-6 px-6 py-2 bg-secondaryColor text-center shadow-custom-shadow rounded-lg hover:bg-secondaryColorLight transition duration-300">
-            {translation[lang].findAgents}
+            {t("findAgents")}
           </div>
         </Link>
       </div>

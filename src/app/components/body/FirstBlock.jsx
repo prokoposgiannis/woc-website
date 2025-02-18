@@ -1,14 +1,19 @@
-"use strict";
+"use client";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import SquareBlock from "@/app/components/body/SquareBlock";
 
-export default function FirstBlock({ translation, lang }) {
+export default function FirstBlock() {
+  const { t } = useTranslation();
+  const lang = useSelector((state) => state.language.lang); // Get language from Redux
+
   return (
     <>
       <div className="absolute w-5/6 z-10">
         <div className="flex justify-between">
-          <SquareBlock imageSubtitle={translation[lang].image1} />
-          <SquareBlock imageSubtitle={translation[lang].image2} />
-          <SquareBlock imageSubtitle={translation[lang].image3} />
+          <SquareBlock imageSubtitle={t("image1")} />
+          <SquareBlock imageSubtitle={t("image2")} />
+          <SquareBlock imageSubtitle={t("image3")} />
         </div>
       </div>
       <svg

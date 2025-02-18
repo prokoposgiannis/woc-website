@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center justify-start">
               <MdOutlineEmail />
-              <div className="ml-2"> info.woc@gmail.com</div>
+              <div className="ml-2"> woc.com.gr@gmail.com</div>
             </div>
           </div>
           <div className="flex h-full items-end">

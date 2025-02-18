@@ -1,6 +1,11 @@
-import type { Metadata } from "next";
+"use client"; // Mark this as a Client Component
+
 import localFont from "next/font/local";
 import "./globals.css";
+import { ReactNode } from "react";
+import { Provider } from "react-redux";
+import { store } from "../redux/store";
+import "../i18n"; // Import i18n configuration
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,23 +18,18 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "woc",
-  description: "Call Agents' online Center.",
-};
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <Provider store={store}>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+    </Provider>
   );
 }

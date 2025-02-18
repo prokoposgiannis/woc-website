@@ -9,6 +9,8 @@
   --foreground: #171717;
   --primaryColor: #124e66;
   --secondaryColor: #748d92;
+  --secondaryColorAgent: #bd5252;
+  --secondaryColorCompany: #748d92;
   --secondaryColorLight: #90a7b1;
   --white: #fdfdfd;
 }

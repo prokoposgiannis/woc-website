@@ -13,6 +13,8 @@ const config: Config = {
         foreground: "var(--foreground)",
         primaryColor: "var(--primaryColor)",
         secondaryColor: "var(--secondaryColor)",
+        secondaryColorAgent: "var(--secondaryColorAgent)",
+        secondaryColorCompany: "var(--secondaryColorCompany)",
         secondaryColorLight: "var(--secondaryColorLight)",
         white: "var(--white)",
       },
