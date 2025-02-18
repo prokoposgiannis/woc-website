@@ -21,8 +21,6 @@ import ContactBlock from "@/app/components/body/ContactBlock";
 import Footer from "@/app/components/Footer";
 import AnimatedGLobe from "@/app/components/AnimatedGlobe";
 
-import { translation } from "@/app/constants/translation";
-
 export default function Home() {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
@@ -156,7 +154,7 @@ export default function Home() {
             <ForthBlock />
           </div>
           <div className="flex h-24 justify-center mt-16 text-white text-3xl font-semibold">
-            Let&apos;s work together.
+            {t("workTogether")}
           </div>
           <div className="flex w-full h-full">
             <ContactBlock />

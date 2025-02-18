@@ -22,6 +22,7 @@ const resources = {
       exp2: "Streaming services",
       exp3: "Gaming",
       exp4: "Internet Banking",
+      workTogether: "Let's work together.",
     },
   },
   el: {
@@ -44,6 +45,7 @@ const resources = {
       exp2: "Υπηρεσίες streaming",
       exp3: "Παιχνίδια",
       exp4: "Τραπεζικές υπηρεσίες",
+      workTogether: "Ας συνεργαστούμε.",
     },
   },
   de: {
@@ -66,6 +68,7 @@ const resources = {
       exp2: "Streaming-Dienste",
       exp3: "Gaming",
       exp4: "Internet-Banking",
+      workTogether: "Lassen Sie uns zusammenarbeiten.",
     },
   },
 };
