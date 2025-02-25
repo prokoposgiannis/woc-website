@@ -27,7 +27,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/firebase/config.js",
-    "src/app/components/body/ContactBlock.jsx",
+    "src/app/components/body/ContactBlocks.jsxsx",
     "src/app/components/body/FirstBlock.jsx",
     "src/app/page.tsx",
     "src/app/components/body/ForthBlock.jsx",
@@ -40,7 +40,9 @@
     "src/app/components/header/Header.jsx",
     "src/app/components/ContactForm.jsx",
     "src/app/components/body/SquareBlock.jsx",
-    "src/app/components/body/SecondBlock.jsx"
+    "src/app/components/body/SecondBlock.jsx",
+    "src/app/agent/page.jsx",
+    "src/app/about/pageS.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -6,7 +6,7 @@ const resources = {
     translation: {
       home: "Home",
       beAnAgent: "Be an Agent",
-      findAgents: "Find Agents",
+      findAgents: "Be a Partner",
       about: "About us",
       contact: "Contact us!",
       title: "Why choose woc?",
@@ -22,14 +22,14 @@ const resources = {
       exp2: "Streaming services",
       exp3: "Gaming",
       exp4: "Internet Banking",
-      workTogether: "Let's work together.",
+      workTogether: "Let's work together",
     },
   },
   el: {
     translation: {
       home: "Αρχική",
       beAnAgent: "Γίνε Agent",
-      findAgents: "Βρες Agents",
+      findAgents: "Γίνε Συνεργάτης",
       about: "Πληροφορίες για εμάς",
       contact: "Στείλε μας!",
       title: "Γιατί να επιλέξεις woc;",
@@ -45,14 +45,14 @@ const resources = {
       exp2: "Υπηρεσίες streaming",
       exp3: "Παιχνίδια",
       exp4: "Τραπεζικές υπηρεσίες",
-      workTogether: "Ας συνεργαστούμε.",
+      workTogether: "Ας συνεργαστούμε",
     },
   },
   de: {
     translation: {
       home: "Startseite",
       beAnAgent: "Werde ein Agent",
-      findAgents: "Finde Agenten",
+      findAgents: "Werde ein Partner",
       about: "Über uns",
       contact: "Kontaktiere uns!",
       title: "Warum woc wählen?",
@@ -68,14 +68,14 @@ const resources = {
       exp2: "Streaming-Dienste",
       exp3: "Gaming",
       exp4: "Internet-Banking",
-      workTogether: "Lassen Sie uns zusammenarbeiten.",
+      workTogether: "Lassen Sie uns zusammenarbeiten",
     },
   },
 };
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en", // Default language
+  lng: "en",
   fallbackLng: "en",
   interpolation: { escapeValue: false },
 });

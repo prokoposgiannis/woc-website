@@ -1,8 +1,8 @@
 "use strict";
 
-export default function ThirdBlockAgent() {
+export default function ThirdBlockPartner() {
   return (
-    <div className="mt-36 relative w-full  h-full">
+    <div className="mt-36 relative w-full h-full">
       <div className="flex h-full">
         <div className="flex flex-col z-10 h-full px-3 text-white items-center">
           <div className="flex flex-col justify-end items-center font-semibold w-full ml-20 text-white text-3xl">
@@ -33,7 +33,7 @@ export default function ThirdBlockAgent() {
       >
         <path
           d="M 3,10 Q 1,10 1,12 L 1,98 Q 1,100 3,100 L 97,92 Q 99,92 99,88 L 99,2 Q 99,0 97,0 Z"
-          className="fill-current text-extraColorAgent"
+          className="fill-current text-secondaryColorPartner"
         />
       </svg>
     </div>

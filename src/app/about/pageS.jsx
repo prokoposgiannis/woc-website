@@ -2,7 +2,7 @@
 "use client";
 
 import { useSelector, useDispatch } from "react-redux";
-import { changeLanguage } from "../redux/slices/languageSlice";
+import { changeLanguage } from "../../redux/slices/languageSlice";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
@@ -12,16 +12,16 @@ import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
 config.autoAddCss = false; // Prevent FontAwesome from adding its own CSS
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
-import FirstBlock from "@/app/components/body/FirstBlock";
-import SecondBlock from "@/app/components/body/SecondBlock";
-import ThirdBlock from "@/app/components/body/ThirdBlock";
+import ThirdBlockAgent from "@/app/components/body/ThirdBlockAgent";
+import TextBlock from "@/app/components/body/TextBlock";
 import ForthBlock from "@/app/components/body/ForthBlock";
-
+import ForthBlockRight from "@/app/components/body/ForthBlockRight";
 import ContactBlock from "@/app/components/body/ContactBlock";
 import Footer from "@/app/components/Footer";
-import AnimatedGLobe from "@/app/components/AnimatedGlobe";
 
-export default function Home() {
+import { translation } from "@/app/constants/translation";
+
+export default function Agent() {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
   const lang = useSelector((state) => state.language.lang);
@@ -42,21 +42,19 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen overflow-y-auto overflow-x-hidden cursor-default">
+    <div className="flex flex-col min-h-screen">
+      {/* Header */}
       <div className="relative max-w-screen-2xl w-full mx-auto text-white">
-        <div className="absolute top-36 right-[-170px] -z-10">
-          <AnimatedGLobe />
-        </div>
         <div className="flex flex-row items-center h-32 w-full text-lg font-bold text-white text-nowrap px-24">
           <div className="min-w-32 pb-2 px-6">
             <img src="/woc-logo.svg" alt="woc Logo" width={100} height={100} />
           </div>
           <div className="flex flex-row w-full pl-28">
-            <ul className="flex flex-row space-x-10 ">
+            <ul className="flex flex-row space-x-10">
               <li>
-                <Link href="/agent" className="relative group">
+                <Link href="/" className="relative group">
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
-                  <span className="relative">{t("beAnAgent")}</span>
+                  <span className="relative">{t("home")}</span>
                 </Link>
               </li>
               <li>
@@ -124,45 +122,18 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col h-fit text-white ml-36 mt-64 mb-44 relative">
-          <p className="font-semibold w-fit text-3xl">{t("title")}</p>
-          <div className="flex w-72 justify-end text-2xl relative">
-            <p className="relative z-10">{t("subtitle")}</p>
+      </div>
 
-            <div className="absolute top-[-8px] right-[-50px] z-0">
-              <img
-                src="/stroke.svg"
-                alt="woc stroke image"
-                width={170}
-                height={170}
-              />
-            </div>
-          </div>
+      <div className="flex flex-col flex-grow mt-28 justify-start">
+        <div className="flex w-1/2 flex-grow  flex-col">
+          <p className="w-full rounded-lg flex-grow bg-blue-300 flex items-center justify-start">
+            eo
+          </p>
         </div>
-        <div className="flex h-full flex-col">
-          <div className="relative w-full text-shadow h-96 text-primaryColor flex justify-center">
-            <FirstBlock />
-          </div>
-          <div className="flex h-52 bg-primaryColor flex-col"></div>
-          <div className="h-full px-16 text-shadow bg-primaryColor">
-            <SecondBlock />
-          </div>
-          <div className="flex w-full text-shadow h-[700px] flex-col">
-            <ThirdBlock />
-          </div>
-          <div className="flex w-full h-full">
-            <ForthBlock />
-          </div>
-          <div className="flex h-24 justify-center mt-16 text-white text-3xl font-semibold">
-            {t("workTogether")}
-          </div>
-          <div className="flex w-full h-full">
-            <ContactBlock color={"primaryColor"} header={true} />
-          </div>
-          <div className="flex w-full h-[220px]">
-            <Footer />
-          </div>
-        </div>
+      </div>
+
+      <div className="w-full h-[220px]">
+        <Footer />
       </div>
     </div>
   );

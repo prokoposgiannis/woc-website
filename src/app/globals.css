@@ -9,9 +9,10 @@
   --foreground: #171717;
   --primaryColor: #124e66;
   --secondaryColor: #748d92;
-  --secondaryColorAgent: #bd5252;
-  --secondaryColorCompany: #748d92;
-  --secondaryColorLight: #90a7b1;
+  --secondaryColorAgent: #9bbd52;
+  --extraColorAgent: #bda952;
+  --secondaryColorPartner: #d4c8a7;
+  --secondaryColorLight: #d4c8a7;
   --white: #fdfdfd;
 }
 
@@ -30,6 +31,10 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 html,
