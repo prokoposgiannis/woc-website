@@ -24,7 +24,7 @@ export const EmailTemplate = ({ name = "" }, lang) => (
         <Hr style={global.hr} />
         <Section style={message}>
           <Img
-            src="https://www.wocgr.com/woc-logo.svg"
+            src="https://www.wocgr.com/woc-logo-bgc.svg"
             width="140"
             height="200"
             alt="illustration of John Prokopos' face"
